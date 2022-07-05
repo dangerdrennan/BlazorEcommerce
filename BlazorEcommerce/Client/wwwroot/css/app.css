@@ -12,6 +12,19 @@ a, .btn-link {
     color: #0071c1;
 }
 
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.media-body {
+    flex: 1;
+}
+
+.price {
+    color: green;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #1b6ec2;
