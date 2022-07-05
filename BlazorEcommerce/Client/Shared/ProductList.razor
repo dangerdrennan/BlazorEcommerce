@@ -7,21 +7,21 @@
 else
 {
     <ul class="list-unstyled">
-    @foreach(var Product in ProductService.Products)
+    @foreach(var product in ProductService.Products)
     {
         <li class="media my-3">
             <div class="media-img-wrapper mr-2">
-                <a href="#">
-                    <img class="media-img" src="@Product.ImageUrl"/>
+                <a href="/product/@product.Id">
+                    <img class="media-img" src="@product.ImageUrl"/>
                 </a>
             </div>
             <div class="media-body">
-                <a href="#">
-                    <h4 class="mb-0">@Product.Title</h4>
+                <a href="/product/@product.Id">
+                    <h4 class="mb-0">@product.Title</h4>
                 </a>
-                <p>@Product.Description</p>
+                <p>@product.Description</p>
                 <h5 class="price">
-                    $@Product.Price
+                    $@product.Price
                 </h5>
             </div>
         </li>

@@ -9,6 +9,23 @@
             _context = context;
         }
 
+        public async Task<ServiceResponse<Product>> GetProductAsync(int productId)
+        {
+            var res = new ServiceResponse<Product>();
+            var product = await _context.Products.FindAsync(productId);
+            if (product == null)
+            {
+                res.Success = false;
+                res.Message = "Sorry, this product does not exist.";
+            }
+            else
+            {
+
+                res.Data = product;
+            }
+            return res;
+        }
+
         public async Task<ServiceResponse<List<Product>>> GetProductsAsync()
         {
             var res = new ServiceResponse<List<Product>>
